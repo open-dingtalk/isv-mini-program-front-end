@@ -1,0 +1,5 @@
+.row{
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+    margin-left: 10rpx;
+}
