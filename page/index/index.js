@@ -4,6 +4,7 @@ let url = "http://127.0.0.1:8080";
 Page({
     data:{
         corpId: '',
+        corpName: '',
         authCode:'',
         userId:'',
         param: '',
@@ -43,9 +44,11 @@ Page({
                             console.log('httpRequest success --->',res)
                             let userId = res.data.data.userId;
                             let userName = res.data.data.userName;
+                            let corpName = res.data.data.corpName;
                             _this.setData({
                                 userId:userId,
-                                userName:userName
+                                userName:userName,
+                                corpName: corpName
                             })
                         } else {
                             console.log("httpRequest failed --->", res)
@@ -76,7 +79,7 @@ Page({
             method: 'POST',
             data: {
                 userId: this.data.userId,
-                corpId:app.globalData.corpId,
+                authCorpId: app.globalData.corpId,
             },
             dataType: 'json',
             success: function(res) {
